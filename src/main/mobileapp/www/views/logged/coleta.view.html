@@ -1,0 +1,74 @@
+<div id="starter" ng-init="" ng-destroy=""> 
+  <ion-view cache-view="false" hide-back-button="true"> 
+    <ion-nav-buttons side="right"> 
+      <button class="button button-stable button-menu" ng-hide="Coleta.inserting || Coleta.editing" ng-click="Coleta.startInserting()"> <i class="icon ion-plus-round"></i> </button> 
+      <button class="button button-stable button-menu" ng-show="Coleta.inserting || Coleta.editing" ng-click="Coleta.post()"> <i class="icon ion-checkmark"></i> </button> 
+    </ion-nav-buttons> 
+    <ion-nav-buttons side="left"> 
+      <button class="button button-icon button-clear button-menu" ng-hide="Coleta.inserting || Coleta.editing" menu-toggle="left"><i class="ion-navicon"></i> </button> 
+      <button class="button button-stable button-menu" ng-show="Coleta.inserting || Coleta.editing" ng-click="Coleta.cancel()"> <i class="icon ion-android-arrow-back"></i> </button> 
+    </ion-nav-buttons> 
+    <ion-content class="view-grid-padrao"> 
+      <h4 class="veiculo">
+          Coleta
+      <ul>
+    <li class="separador"></li>
+      </ul></h4> 
+      <div ng-hide="Coleta.inserting || Coleta.editing" data-component="crn-datasource-filter" id="crn-datasource-filter-general" class=""> 
+        <input type="text" ng-model="vars.search" cronapp-filter="nome;" cronapp-filter-operator="" cronapp-filter-autopost="true" crn-datasource="Coleta" value="" placeholder="Pesquise uma coleta"> 
+      </div> 
+      <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-datasource" id="crn-datasource-906854"> 
+        <datasource name="Coleta" entity="api/cronapi/crud/app.entity.Coleta" keys="id" rows-per-page="10" delete-message="Deseja remover?" class=""></datasource> 
+      </div> 
+      <div crn-datasource="Coleta" class="" ng-hide="Coleta.editing || Coleta.inserting"> 
+        <ion-list can-swipe="listCanSwipe"> 
+          <ion-item ng-repeat="rowData in datasource.data" class="item" ng-click="datasource.startEditing(rowData)"> 
+            <div class="row coletado" ng-init=""> 
+              <div class="col"> 
+                <i class="icon ion-checkmark" ng-if="rowData.coletado"></i> 
+                 {{rowData.nome}} 
+              </div> 
+              <div class="col">
+                 {{rowData.quantidade}} 
+              </div> 
+            </div> 
+            <ion-option-button class="button-positive" ng-click="datasource.startEditing(rowData)"> 
+              <i class="icon ion-edit"></i> 
+            </ion-option-button> 
+            <ion-option-button class="button-assertive" ng-click="datasource.remove(rowData)">
+               &nbsp; 
+              <i class="icon ion-trash-a"></i> 
+            </ion-option-button> 
+          </ion-item> 
+        </ion-list> 
+      </div> 
+      <div ng-show="Coleta.editing || Coleta.inserting"> 
+        <form crn-datasource="Coleta"> 
+          <fieldset ng-disabled="!Coleta.editing &amp;&amp; !Coleta.inserting"> 
+            <div class="list"> 
+              <!-- nome begin --> 
+              <input type="text" placeholder="Nome" ng-model="Coleta.active.nome" id="textinput-nome" name="textinput-nome"> 
+              <!-- quantidade begin --> 
+              <input type="text" placeholder="Quantidade" ng-model="Coleta.active.quantidade" id="textinput-quantidade" name="textinput-quantidade"> 
+              <!-- latitude begin --> 
+              <input type="text" placeholder="Latitude" ng-model="Coleta.active.latitude" id="textinput-latitude" name="textinput-latitude"> 
+              <!-- longitude begin --> 
+              <input type="text" placeholder="Longitude" ng-model="Coleta.active.longitude" id="textinput-longitude" name="textinput-longitude"> 
+              <!-- coletado begin --> 
+              <div class="item item-toggle">
+                 Coletado 
+                <label for="textinput-coletado" class="toggle toggle-assertive"> <input type="checkbox" ng-model="Coleta.active.coletado" id="textinput-coletado" name="textinput-coletado"> 
+                  <div class="track"> 
+                    <div class="handle"></div> 
+                  </div> </label> 
+              </div> 
+              <!-- motorista begin --> 
+              <datasource name="Motorista" entity="api/cronapi/crud/app.entity.Motorista" keys="id" class=""></datasource> 
+              <label for="textinput-motorista" class="item item-input item-select"> <span class="input-label">motorista</span> <select ng-model="Coleta.active.motorista" class="form-control" id="textinput-motorista" name="textinput-motorista" ng-options="opt as opt.nome for opt in Motorista.data track by opt.id"> <option value="">None</option> </select> </label> 
+            </div> 
+          </fieldset> 
+        </form> 
+      </div> 
+    </ion-content> 
+  </ion-view>
+</div>

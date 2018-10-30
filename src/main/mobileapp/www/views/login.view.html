@@ -1,0 +1,32 @@
+<ion-view cache-view="false" view-title=""> 
+  <ion-content class="form-center"> 
+    <div class="list" data-container="true" style="padding-top: 60px;"> 
+      <div class="col text-center"> 
+        <img class="logo" src="img/logo.png"> 
+      </div> 
+    </div> 
+    <div class="conteudo"> 
+      <div class="meu-box">
+        <label for="nomeCompleto" class="label-nome"> 
+          <!--Login--> 
+          <form class="form-validation" name="form" ng-submit="login()" role="form"> 
+            <input type="text" class="form-control" ng-model="user.username" id="username" placeholder="{{'Login.view.Username' | translate}}"> 
+            <!--Senha--> 
+            <input type="password" class="form-control" ng-model="user.password" id="password" placeholder="{{'Login.view.Password' | translate}}"> 
+            
+            <button type="submit" class="button button-outline button-positive" style="color: #ff5311; border: 1px solid #ff5311;" ng-disabled="form.$invalid || vm.dataLoading">
+                {{"Login.view.Login" | translate}}
+            </button> 
+            <a href="#/public/chat" class="component-holder" target="_self" onclick=""  xattr-fullsize="display:block;" data-replace="true" data-component="crn-anchor" id="crn-anchor-48557"> <button class="button button-clear button-positive" style="color: #ff7112;" type="button" ng-click="" data-component="crn-button" id="crn-button-343899" xattr-fullsize="button-full"> 
+            <span>
+                Solicitar Coleta
+            </span> </button> </a>
+            <div ng-show="message.error" class="help-block"> 
+            </div> 
+          </form></label> 
+      </div> {{message.error}} 
+    </div> 
+    <p class="text--center" style="color: #cfdae5;">Esqueceu a senha? <a href="#" style="color: #e4e8ed;">Inscreva-se agora</a> 
+    </p>
+  </ion-content> 
+</ion-view>

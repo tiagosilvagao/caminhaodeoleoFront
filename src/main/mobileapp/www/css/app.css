@@ -1,0 +1,298 @@
+/*pag INICIO login*/
+.logo {
+  width: 150px;
+  height: 149px;
+}
+
+.conteudo {
+  max-width: 380px;
+  padding: 40px;
+  font-size: 20px;
+  margin: 0 auto;
+  background-color: #FFF;
+  border: 1px solid #1177FF;
+  opacity: 0.8;
+  border-radius: 10px;
+}
+
+input {
+	font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #e4e8ed;
+  border-radius: 3px;
+  border: 0;
+  box-sizing: border-box;
+  font-size: 21px;
+  border-radius: 3px;
+  text-align: center;
+  width: 100%;
+  margin: 30px auto;
+  text-align: center;
+}
+
+h4 {
+  padding: 10px;
+  width: 50%;
+  margin: 30px auto;
+  text-align: center;
+  border-radius: 3px;
+  color: #ff5311;
+  font-size: 21px;
+}
+::-webkit-input-placeholder {
+   padding: 10px 10px 10px 15px;
+   font: 400 16px Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
+   
+  
+}
+
+:-moz-placeholder {
+   font: 400 16px Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
+   
+   
+}
+
+::-moz-placeholder {
+   font: 400 16px Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
+  
+}
+
+:-ms-input-placeholder {  
+   font: 400 16px Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
+  
+}
+p {
+  margin-bottom: var(--paragraphMarginBottom);
+  margin-top: var(--paragraphMarginTop);
+  padding-top: 20px;
+  text-align: center;
+  color: #efe8ed;
+  font-size: 16;
+}
+
+.form-center { /* view geral */
+  background-color: #085CCC;
+  background-repeat:no-repeat;
+	background-size: cover;
+}
+
+.button-positive {
+  
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  width: 100%;
+  padding: 2px;
+  font-size: 16px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  
+
+}
+
+/*pag FIM login*/
+
+/*pag INICIO login*/
+
+
+.header {
+  background-color: none;
+  padding: 0px 10px;
+  margin: 0 auto;
+  width: 100%;
+  height: 44px;
+  position: relative;
+  text-align: center;
+}
+
+.header img {
+  width: 150px;
+  margin: 3px auto 0px auto;
+}
+
+.button-menu {
+  background-color: red;
+  border-radius: 3px;
+  margin: 0;
+  padding: 0px 15px 0px 15px;
+  color: #fff;
+  font-size: 30px;
+}
+
+.button-menu:after {
+    background-color: #e85000;
+    color: #fff;
+    z-index: -1;
+    padding: 10px 20px 20px 30px;
+    text-align: center;  
+}
+
+.button-menu i {
+    color: #fff;
+    font-size: 35px;
+    padding: 0px;
+    margin: 0px 10px 10px 0px;  
+}
+
+.bg-header-menu-interno {
+  background-color: #085ccc;
+  border:0;
+  color: #fff;
+}
+
+.bg-header-menu-interno h1 {
+  color: #fff; 
+}
+
+
+.bar.bar-stable {
+    border-color: transparent;
+    color: red;
+}
+
+.button-biotank-item { /* botao HOME 'COLETAS PENDENTES'*/
+    width: 94%;
+    padding: 10px;
+    margin-bottom: 20px;
+    margin: 10px;
+}
+ul li.separador, separador-coletagem {
+    width: 90%;
+    border-top: 1px solid #e4e8ed;
+    list-style-type: none;
+    margin-top: 6px;
+    transparent
+}
+
+.search-float i, .search-float input{
+  float: left;
+}
+
+.bar-stable .button.button-icon {
+  border-color: white;
+  background: none;
+  margin: -2px 0px 0px 0px;
+}
+
+.item {
+    border-width: 0px;
+}
+
+.coletado {
+  background-color: #f3f1f1;
+  padding: 10px 10px;
+  font-size: 10px
+  margin: 0;
+}
+
+.coletado i {
+  color: #fff;
+  background-color: #1cc386;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 6px 9px 6px 9px;
+  margin-right: 10px;
+}
+
+.coletado .col {
+  font-size: 14px;    
+  background-color: #cfdae5;
+  color: #2e3743;
+}
+
+.item-complex .item-content {
+  position: relative;
+  z-index: 2;
+  padding: 4px 16px 4px 16px;
+  border: none;
+  background-color: #ff5311;
+  border: 1px solid #e4e8ed;
+  text-align: center;
+  color: #cfdae5;
+  margin: 10px 10px;
+  border-radius: 5px;
+}
+
+.menu-lateral-item {
+  padding: 15px;
+  margin-bottom: 0px;
+  background-color: #085CCC;
+  color: #cfdae5;
+  border: 1px solid #1177ff;
+}
+
+.menu-lateral-item i {
+  font-size: 25px;
+  margin-right: 15px;
+}
+
+.menu-lateral-item label {
+  font-size: 13px;
+}
+
+.recebe {
+  color: #e4e8ed;
+  margin-left: -35px;
+}
+.input-senha {
+ margin: 30px auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

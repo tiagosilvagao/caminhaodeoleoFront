@@ -1,0 +1,74 @@
+<ion-view cache-view="false" view-title="" hide-back-button="true">
+  <ion-nav-buttons side="right"> 
+    <button class="button button-stable" ng-hide="Motorista.inserting || Motorista.editing" ng-click="Motorista.startInserting()"> <i class="icon ion-plus-round"></i> </button>
+    <button class="button button-stable" ng-show="Motorista.inserting || Motorista.editing" ng-click="Motorista.post()"> <i class="icon ion-checkmark"></i> </button>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="left">
+    <button class="button button-icon button-clear ion-navicon" ng-hide="Motorista.inserting || Motorista.editing" menu-toggle="left"> </button>
+    <button class="button button-stable" ng-show="Motorista.inserting || Motorista.editing" ng-click="Motorista.cancel()"> <i class="icon ion-android-arrow-back"></i> </button>
+  </ion-nav-buttons>
+  <ion-content>
+    <div ng-hide="Motorista.inserting || Motorista.editing" data-component="crn-datasource-filter" id="crn-datasource-filter-general" class="">
+      <label class="item item-input" id="cloud-search1">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="text" ng-model="vars.search" cronapp-filter="nome;" cronapp-filter-operator="" cronapp-filter-autopost="true" crn-datasource="Motorista" value="" placeholder="{{'template.crud.search' | translate}}">
+      </label>
+          <h4 class="coletagem" style>Motorista
+      <ul>
+    <li class="separador"></li>
+      </ul></h4>
+    </div>   
+    <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-datasource" id="crn-datasource-906854">
+      <datasource name="Motorista" entity="api/cronapi/crud/app.entity.Motorista" keys="id" rows-per-page="10" delete-message="Deseja remover?" class=""></datasource>
+    </div>
+    <div crn-datasource="Motorista" class="" ng-hide="Motorista.editing || Motorista.inserting">
+      <ion-list can-swipe="listCanSwipe">
+        <ion-item ng-repeat="rowData in datasource.data" class="item" ng-click="datasource.startEditing(rowData)">
+          <div class="row">
+            <div class="col">
+              {{rowData.nome}}
+            </div>
+            
+          </div>
+          <ion-option-button class="button-positive" ng-click="datasource.startEditing(rowData)">
+            <i class="icon ion-edit"></i>
+          </ion-option-button>
+          <ion-option-button class="button-assertive" ng-click="datasource.remove(rowData)">
+            &nbsp;
+            <i class="icon ion-trash-a"></i>
+          </ion-option-button>
+        </ion-item>
+      </ion-list>
+    </div>
+    <div ng-show="Motorista.editing || Motorista.inserting">
+      <form crn-datasource="Motorista">
+        <fieldset ng-disabled="!Motorista.editing &amp;&amp; !Motorista.inserting">
+          <div class="list">
+            <!-- nome begin -->
+            <label for="textinput-nome" class="item item-input item-stacked-label">
+            <span class="input-label">Nome</span>
+            <input type="text" placeholder="Nome" ng-model="Motorista.active.nome" id="textinput-nome" name="textinput-nome">
+            </label>
+            <!-- roteiro begin -->
+            
+            <!-- user begin -->
+            <datasource name="User" entity="api/cronapi/crud/app.entity.User" keys="id" class=""></datasource>
+            <label for="textinput-user" class="item item-input item-select">
+              <span class="input-label">user</span>
+              <select ng-model="Motorista.active.user" class="form-control" id="textinput-user" name="textinput-user" ng-options="opt as opt.email for opt in User.data track by opt.id">
+              <option value="">None</option>
+              </select>
+            </label>
+          </div>
+          
+          <div class="component-holder ng-binding ng-scope" data-component="crn-google-maps" id="crn-google-maps-1037237">
+    <span class="input-label">Área de atuação: </span>
+              <div id="map" token="AIzaSyDhdUegxwZiRrcJQsKVsmI_b3YIMti0eyY" style="width:100%;;min-height:400px;height:90%;" ng-init="blockly.js.blockly.Caminhao.desenhaPoligono()" ng-if="Motorista.editing || Motorista.inserting"></div>
+            </div>
+            
+            
+        </fieldset>
+      </form>
+    </div>
+  </ion-content>
+</ion-view>

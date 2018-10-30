@@ -1,0 +1,112 @@
+<ion-view cache-view="false" hide-back-button="true">
+  <ion-nav-buttons side="center"> 
+    <button class="button button-stable button-menu" ng-hide="Veiculo.inserting || Veiculo.editing" ng-click="Veiculo.startInserting()"> <i class="icon ion-plus-round"></i> </button>
+    <button class="button button-stable button-menu" ng-show="Veiculo.inserting || Veiculo.editing" ng-click="Veiculo.post()"> <i class="icon ion-checkmark"></i> </button>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="center">
+    <button class="button button-icon button-clear button-menu" ng-hide="Veiculo.inserting || Veiculo.editing" menu-toggle="left"><i class="ion-navicon"></i> </button>
+    <button class="button button-stable button-menu" ng-show="Veiculo.inserting || Veiculo.editing" ng-click="Veiculo.cancel()"> <i class="icon ion-android-arrow-back"></i> </button>
+  </ion-nav-buttons>
+  <ion-content class="view-grid-padrao">
+      <h4 class="veiculo">Veículo
+      <ul>
+    <li class="separador"></li>
+      </ul></h4>
+      
+    <div ng-hide="Veiculo.inserting || Veiculo.editing" data-component="crn-datasource-filter" id="crn-datasource-filter-general" class="  inputveiculo">
+        <input type="text"  ng-model="vars.search" cronapp-filter="placa;" cronapp-filter-operator="" cronapp-filter-autopost="true" style="color: #2a2a2a;" crn-datasource="Veiculo" value="" placeholder="Pesquise aqui seu veículo">
+    </div>   
+    <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-datasource" id="crn-datasource-906854">
+      <datasource  name="Veiculo" entity="api/cronapi/crud/app.entity.Veiculo" keys="id" rows-per-page="10" delete-message="Deseja remover?" class=""></datasource>
+    </div>
+    <div crn-datasource="Veiculo" class="" ng-hide="Veiculo.editing || Veiculo.inserting">
+      <ion-list can-swipe="listCanSwipe">
+        <ion-item ng-repeat="rowData in datasource.data" class="item" ng-click="datasource.startEditing(rowData)">
+          <div class="row">
+            <div class="col recebe">
+              {{rowData.capacidade}}
+            </div>
+            <div class="col recebe">
+              {{rowData.capacidade_ocupada}}
+            </div>
+            <div class="col recebe">
+              {{rowData.emColeta}}
+            </div>
+            <div class="col recebe">
+              {{rowData.motorista.nome}}
+            </div>
+            <div class="col recebe">
+              {{rowData.placa}}
+            </div>
+          </div>
+          <ion-option-button class="button-positive" ng-click="datasource.startEditing(rowData)">
+            <i class="icon ion-edit"></i>
+          </ion-option-button>
+          <ion-option-button class="button-assertive" ng-click="datasource.remove(rowData)">
+            &nbsp;
+            <i class="icon ion-trash-a"></i>
+          </ion-option-button>
+        </ion-item>
+      </ion-list>
+    </div>
+    <div ng-show="Veiculo.editing || Veiculo.inserting">
+      <form crn-datasource="Veiculo">
+        <fieldset ng-disabled="!Veiculo.editing &amp;&amp; !Veiculo.inserting">
+          <div class="list">
+            <!-- capacidade begin -->
+            <label for="textinput-capacidade" class="item item-input item-stacked-label">
+            <span class="input-label">Capacidade</span>
+            <input
+            type="text"
+            placeholder="Capacidade"
+            ng-model="Veiculo.active.capacidade"
+            id="textinput-capacidade"
+            name="textinput-capacidade"
+            >
+            </label>
+            <!-- capacidade_ocupada begin -->
+            <label for="textinput-capacidade_ocupada" class="item item-input item-stacked-label">
+            <span class="input-label">Capacidade _ocupada</span>
+            <input
+            type="text"
+            placeholder="Capacidade _ocupada"
+            ng-model="Veiculo.active.capacidade_ocupada"
+            id="textinput-capacidade_ocupada"
+            name="textinput-capacidade_ocupada"
+            >
+            </label>
+            <!-- emColeta begin -->
+            <div class="item item-toggle">
+              Em Coleta
+              <label for="textinput-emColeta" class="toggle toggle-assertive">
+                <input type="checkbox" ng-model="Veiculo.active.emColeta" id="textinput-emColeta" name="textinput-emColeta" >
+                <div class="track">
+                  <div class="handle"></div>
+                </div>
+              </label>
+            </div>
+            <!-- motorista begin -->
+            <datasource name="Motorista" entity="api/cronapi/crud/app.entity.Motorista" keys="id" class=""></datasource>
+            <label for="textinput-motorista" class="item item-input item-select">
+              <span class="input-label">motorista</span>
+              <select ng-model="Veiculo.active.motorista" class="form-control" id="textinput-motorista" name="textinput-motorista" ng-options="opt as opt.nome for opt in Motorista.data track by opt.id" >
+              <option value=''>None</option>
+              </select>
+            </label>
+            <!-- placa begin -->
+            <label for="textinput-placa" class="item item-input item-stacked-label">
+            <span class="input-label">Placa</span>
+            <input
+            type="text"
+            placeholder="Placa"
+            ng-model="Veiculo.active.placa"
+            id="textinput-placa"
+            name="textinput-placa"
+            >
+            </label>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,84 @@
+[
+	{
+		"_class": "app.entity.User",
+		"id": "304BF43E-0E62-4F4A-8A63-3F22D7AD4611",
+		"name": "admin",
+		"login": "admin",
+		"password": "$2a$10$LjzpM1Q3VoAtG2dTCCabNuW0/amVPjL3Iyvyi2Dj7NP.HngtzSewu"
+	},
+	{
+		"_class": "app.entity.User",
+		"id": "F66186B0-FAC4-408B-B095-959869FBEFC7",
+		"name": "José Luiz",
+		"login": "jose",
+		"password": "$2a$10$agfoGnu9o6XRWa9Pda9YGeq224RNdT5g5MVRTHaq05EhBYsIAQWAy"
+	},
+	{
+		"_class": "app.entity.User",
+		"id": "EF598313-B411-42BE-9315-3CE9624A53DD",
+		"email": "maria@cronapp.io",
+		"name": "Maria Silvia",
+		"login": "maria",
+		"password": "$2a$10$JFZsrg1/mffAjcfL4p9BXOb7sJD7j2CVDc1gLTVB6LoR2vldh1LaW"
+	},
+	{
+		"_class": "app.entity.User",
+		"id": "C1473ABA-7672-4AA2-8289-0CF35BA7FF7C",
+		"email": "pedro@cronapp.io",
+		"name": "Pedro Cortez",
+		"login": "pedro",
+		"password": "$2a$10$5SfuDHD7rGU6lKE/1ulNwuCGf/4qw7M2ZZUSgaM2XDZdPxlDGgCtu"
+	},
+	{
+		"_class": "app.entity.Role",
+		"id": "Administrators",
+		"user": {
+			"id": "304BF43E-0E62-4F4A-8A63-3F22D7AD4611"
+		}
+	},
+	{
+		"_class": "app.entity.Coleta",
+		"id": "8238D8C7-9095-4251-B8E5-D10B5EBA27EC",
+		"nome": "Bob's Delivery Pituba",
+		"quantidade": "250",
+		"latitude": "-13.008218",
+		"longitude": "-38.4658547",
+		"coletado": false
+	},
+	{
+		"_class": "app.entity.Coleta",
+		"id": "61CB6E0F-44BA-4918-9EF2-11CA945F6167",
+		"nome": "Baby Beef Express",
+		"quantidade": "150",
+		"latitude": "-12.9810807",
+		"longitude": "-38.4669977",
+		"coletado": false
+	},
+	{
+		"_class": "app.entity.Coleta",
+		"id": "63D64153-004A-469F-B9AC-CB46DBA69864",
+		"nome": "Perini",
+		"quantidade": "100",
+		"latitude": "-13.0091816",
+		"longitude": "-38.4655769",
+		"coletado": false
+	},
+	{
+		"_class": "app.entity.Coleta",
+		"id": "5C674653-375F-43EB-A6C6-FF63BD5164DE",
+		"nome": "Cargill Cacau Ltda",
+		"quantidade": "400",
+		"latitude": "-12.9713571",
+		"longitude": "-38.5160904",
+		"coletado": false
+	},
+		{
+		"_class": "app.entity.Coleta",
+		"id": "DE76DB36-F789-44BB-B7E0-958EBA30F16C",
+		"nome": "KFC - Shopping Barra Salvador",
+		"quantidade": "800",
+		"latitude": "-13.0066799",
+		"longitude": "-38.5244519",
+		"coletado": false
+	}
+]
